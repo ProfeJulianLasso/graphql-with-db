@@ -1,0 +1,79 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  """UUID from user"""
+  userId: String!
+
+  """UUID from role"""
+  roleId: String!
+
+  """User first name"""
+  firstName: String!
+
+  """User last name"""
+  lastName: String!
+
+  """User role"""
+  role: Role!
+}
+
+type Role {
+  roleId: String!
+  name: String!
+  description: String!
+  users: [User!]!
+}
+
+type Query {
+  """Get all users"""
+  getAllUsers: [User!]!
+
+  """Get all roles"""
+  getAllRoles: [Role!]!
+
+  """Get user by id"""
+  getUser(
+    """UUID from user to find"""
+    userId: String!
+  ): User!
+}
+
+type Mutation {
+  """Create a new user"""
+  createUser(user: UserDto!): User!
+
+  """Update a user"""
+  updateUser(
+    """UUID from user to update"""
+    userId: String!
+    user: UserUpdateDto!
+  ): User!
+
+  """Delete a user"""
+  deleteUser(
+    """UUID from user to delete"""
+    userId: String!
+  ): User!
+}
+
+input UserDto {
+  """UUID from user"""
+  userId: String
+
+  """UUID from role"""
+  roleId: String!
+
+  """User first name"""
+  firstName: String!
+
+  """User last name"""
+  lastName: String!
+}
+
+input UserUpdateDto {
+  roleId: String
+  firstName: String
+  lastName: String
+}
