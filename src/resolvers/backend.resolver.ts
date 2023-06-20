@@ -1,10 +1,10 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { Role } from 'src/database/entities/role.entity';
-import { User } from 'src/database/entities/user.entity';
-import { RoleRepository } from 'src/database/repositories/role.repository';
-import { UserRepository } from 'src/database/repositories/user.repository';
-import { UserUpdateDto } from 'src/dto/user-update.input';
-import { UserDto } from 'src/dto/user.input';
+import { Role } from '../database/entities/role.entity';
+import { User } from '../database/entities/user.entity';
+import { RoleRepository } from '../database/repositories/role.repository';
+import { UserRepository } from '../database/repositories/user.repository';
+import { UserUpdateDto } from '../dto/user-update.input';
+import { UserDto } from '../dto/user.input';
 
 @Resolver('Backend')
 export class BackendResolver {
