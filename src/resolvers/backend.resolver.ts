@@ -35,6 +35,8 @@ export class BackendResolver {
     description: 'Create a new user',
   })
   createUser(@Args('user') user: UserDto): Promise<User> {
+    // const data = {} as UserDto;
+    // const data = new UserDto();
     const newUser = new User();
     newUser.roleId = user.roleId;
     newUser.firstName = user.firstName;
